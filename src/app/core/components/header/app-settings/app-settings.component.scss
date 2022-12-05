@@ -1,0 +1,11 @@
+.header__setting-btn {
+  width: 24px;
+  height: 24px;
+  margin: 3px 0 0 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  &:hover {
+    filter: brightness(0.6);
+  }
+}

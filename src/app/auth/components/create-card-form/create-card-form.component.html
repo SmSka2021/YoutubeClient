@@ -1,0 +1,62 @@
+<div class="form-wrapper">
+  <button class="btn-close" type="button" (click)="closeCreateNewCard()">X</button>
+  <h3  *ngIf="!isFormValid" class="form-wrapper__title">Create new card</h3>
+
+<form [formGroup]="createCardForm" (ngSubmit)="submit()" class="form" *ngIf="!isFormValid || isShowCreateform; else messageAdmin">
+
+
+  <label for="title" class="form__label">Title</label>
+  <input class='form__input' type='text' id="title" formControlName="title"/>
+  <p class="error"
+     *ngIf="createCardForm.get('title')?.hasError('required') && createCardForm.get('title')?.touched">Please enter a title</p>
+  <p class="error"
+     *ngIf="createCardForm.get('title')?.hasError('minlength') && createCardForm.get('title')?.touched">The title is too short</p>
+  <p class="error"
+     *ngIf="createCardForm.get('title')?.hasError('maxlength') && createCardForm.get('title')?.touched">The title is too long</p>
+
+
+
+  <label for="discription" class="form__label">Discription</label>
+  <input class="form__input" type="text" id="discription" formControlName="discription"/>
+  <p class="error"
+     *ngIf="createCardForm.get('discription')?.hasError('maxlength') && createCardForm.get('discription')?.touched">>The description is too long</p>
+  <p class="error"
+     *ngIf="createCardForm.get('discription')?.hasError('required') && createCardForm.get('discription')?.touched">Please enter a description</p>
+
+
+  <label for="img" class="form__label">Link to the image cover</label>
+  <input class='form__input' type='text' id="img" formControlName="img"/>
+  <p class="error"
+     *ngIf="createCardForm.get('img')?.hasError('required') && createCardForm.get('img')?.touched">Please enter a link to the image</p>
+     <p class="error"
+     *ngIf="createCardForm.get('img')?.hasError('pattern') && createCardForm.get('img')?.touched">The image link is invalid</p>
+
+
+  <label for="linkVideo" class="form__label">Link to the video</label>
+  <input class='form__input' type='text' id="linkVideo" formControlName="linkVideo" />
+  <p class="error"
+    *ngIf="createCardForm.get('linkVideo')?.hasError('required') && createCardForm.get('linkVideo')?.touched">Please enter a link to the video</p>
+  <p class="error"
+    *ngIf="createCardForm.get('linkVideo')?.hasError('pattern') && createCardForm.get('linkVideo')?.touched">The video link is invalid</p>
+
+
+    <label for="datePublic" class="form__label">Creation date</label>
+    <input class='form__input' type='date' id="datePublic" formControlName="datePublic" />
+    <p class="error"
+      *ngIf="createCardForm.get('datePublic')?.hasError('required') && createCardForm.get('datePublic')?.touched">Please enter a creation date</p>
+      <p class="error"
+      *ngIf="createCardForm.get('datePublic')?.hasError('invaliddate') && createCardForm.get('datePublic')?.touched">The date is invalid</p>
+
+  <div class="form__btn-container">
+    <button class="form__btn_login"  [disabled]="!createCardForm.valid" type="submit">Create card</button>
+  </div>
+</form>
+<ng-template #messageAdmin>
+  <h2 class="form-wrapper__title-create">Card created successfully</h2>
+  <h3 class="form-wrapper__title-quesch">Do You want to create another card?</h3>
+  <div class="form__btn-container">
+    <button class="form__btn_login btn" type="button" (click)="createNewCard()" >Yes</button>
+    <button class="form__btn_login btn" type="button" (click)="closeCreateNewCard()">No</button>
+  </div>
+</ng-template>
+</div>

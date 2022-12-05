@@ -1,0 +1,19 @@
+<form [formGroup]="regFormGroup" (ngSubmit)="submit()" class="form">
+  <label for="login" class="form__label">Login</label>
+  <input class='form__input' type='text' id="login" formControlName="login"/>
+  <p class="error" *ngIf="regFormGroup.get('login')?.hasError('required') && regFormGroup.get('login')?.touched">Please enter a login email</p>
+  <p class="error" *ngIf="regFormGroup.get('login')?.hasError('email') && regFormGroup.get('login')?.touched">The login email is invalid</p>
+
+  <label for="password" class="form__label">password</label>
+  <input class='form__input' type='password' id="password" formControlName="password"/>
+  <p class="error" *ngIf="regFormGroup.get('password')?.hasError('required') && regFormGroup.get('password')?.touched">Please enter a password</p>
+
+  <p class="error" *ngIf="regFormGroup.get('password')?.hasError('invalidPassword') && regFormGroup.get('password')?.touched">Your password isn't strong enough</p>
+
+  <div class="form__btn-container">
+    <button class="form__btn_registr" type="button" (click)="authService.setRegistration()">Registration</button>
+    <button class="form__btn_login" [disabled]="!regFormGroup.valid" type="submit" >Login</button>
+  </div>
+</form>
+
+

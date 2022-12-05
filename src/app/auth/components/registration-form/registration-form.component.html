@@ -1,0 +1,26 @@
+<form [formGroup]="registrFormGroup" (ngSubmit)="submit()" class="form">
+  <label for="firstName" class="form__label">First Name</label>
+  <input class='form__input' type='text' id="firstName" formControlName="firstName"/>
+  <p *ngIf="isControlInvalid('firstName')" class="error">Name must be at least 3 characters long.</p>
+
+  <label for="lastName" class="form__label">Last Name</label>
+  <input class='form__input' type='text' id="lastName" formControlName="lastName"/>
+  <p *ngIf="isControlInvalid('lastName')" class="error">Name must be at least 3 characters long.</p>
+
+  <label for="email" class="form__label">email</label>
+  <input class='form__input' type='email' id="email" formControlName="email"/>
+  <p *ngIf="isControlInvalid('email')" class="error">Email must be correct.</p>
+
+  <label for="password" class="form__label">password</label>
+  <input class='form__input' type='password' id="password" formControlName="password"/>
+  <p class="error"
+    *ngIf="registrFormGroup.get('password')?.hasError('required') && registrFormGroup.get('password')?.touched">Please  enter a password</p>
+
+  <p class="error"
+    *ngIf="registrFormGroup.get('password')?.hasError('invalidPassword') && registrFormGroup.get('password')?.touched"> Your password isn't strong enough</p>
+
+  <div class="form__btn-container">
+    <button class="form__btn_login" type="button" (click)="authService.setRegistration()">Login</button>
+    <button class="form__btn_registr"  [disabled]="!registrFormGroup.valid" type="submit">Registration</button>
+  </div>
+</form>

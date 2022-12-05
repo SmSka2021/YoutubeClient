@@ -1,0 +1,6 @@
+<section class="cards">
+  <app-card *ngFor='let card of (cardsVideo$ | async)!
+  | filter: filterService.getValueInputFilter()
+  | sort: sortService.getSortByValue(): sortService.getSortUpDownValue()' [oneCard]='card'>
+  </app-card>
+</section>

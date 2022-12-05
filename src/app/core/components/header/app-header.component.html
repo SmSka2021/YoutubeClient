@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header-wrapper">
+    <h3 class="header-title">YouTubeClient</h3>
+    <button (click)="getAdminPage()" type="button" class="header__logo-btn">
+      <img class='header__logo' src='./assets/icons/logo.svg' alt='logo img' />
+    </button>
+    <app-search></app-search>
+    <app-settings></app-settings>
+    <app-authorize></app-authorize>
+    <button (click)="getAdminPage()" type="button" class="header__create-btn">
+      <img class='header__create-img' src='./assets/icons/create.png' alt='logo img' />
+    </button>
+  </div>
+  <app-sort *ngIf="sortService.getSortBlockShowValue()"></app-sort>
+</header>

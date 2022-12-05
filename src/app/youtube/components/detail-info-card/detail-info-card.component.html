@@ -1,0 +1,17 @@
+<button type="button" class="detail-info__btn_back" (click)="backHome()">ᑉ</button>
+<div class="detail-info__wrapper">
+  <div class="detail-info__img">
+    <img [src]="(oneCardVideo$ | async)?.snippet?.thumbnails?.standard?.url" alt="cover video" />
+  </div>
+  <div class="detail-info__item" appBorderColor [day]="(oneCardVideo$ | async)?.snippet?.publishedAt">
+    <div class="detail-info__title-container">
+      <h4 class="detail-info__item-title">{{(oneCardVideo$ | async)?.snippet?.title}}</h4>
+      <p class="detail-info__item-day">{{(oneCardVideo$ | async)?.snippet?.publishedAt | date}}</p>
+    </div>
+    <div class="detail-info__description-container">
+      <h6 class="detail-info__description-title">Description:</h6>
+      <p class="detail-info__item-date">{{(oneCardVideo$ | async)?.snippet?.description}}</p>
+    </div>
+    <app-card-info [oneCard]="oneCardVideo$ | async"></app-card-info>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="filter">
+  <button class="filter__btn" type="button" (click)="inpFocus.focus()">by word or sentance</button>
+  <input class="filter__input" #inpFocus type="search" placeholder='title'
+    [(ngModel)]='valueInput' (ngModelChange)="changeInput(valueInput)">
+</div>

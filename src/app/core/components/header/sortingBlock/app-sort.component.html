@@ -1,0 +1,8 @@
+<section class="sorting">
+  <h6 class="sorting__title">Sorting by:</h6>
+  <button class="sorting__btn" type="button"
+      (click)="sortDayUp ? sortDayDes() : sortDayInc()">date</button>
+  <button class="sorting__btn" type="button"
+      (click)="sortViewUp ? sortViewInc() : sortViewDes()">count of views</button>
+  <app-filter></app-filter>
+</section>

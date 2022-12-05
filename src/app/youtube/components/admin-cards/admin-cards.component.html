@@ -1,0 +1,11 @@
+<div *ngFor='let card of (adminCard$ | async)!' class="card" appBorderColor [day]="card.datePublic">
+  <img class="card__img" [src]="card.img" alt="img move" />
+  <h5 class="card__title"> {{card.title}}</h5>
+  <h6 class="card__discrip-title">Link Video</h6>
+  <p class="card__discrip-text"> {{card.linkVideo}}</p>
+  <h6 class="card__discrip-title">Discription</h6>
+  <p class="card__discrip-text"> {{card.discription}}</p>
+ <p class="detail-info__item-day">{{card.datePublic | date}}</p>
+ <button class="card__btn" type="button" (click)="deleteCard(card.id)">delete</button>
+</div>
+

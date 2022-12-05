@@ -1,0 +1,6 @@
+<div class="card" appBorderColor [day]="oneCard.snippet.publishedAt">
+  <img class="card__img" [src]="oneCard.snippet.thumbnails.medium.url" alt="img move" />
+  <app-card-info [oneCard]="oneCard"></app-card-info>
+  <h5 class="card__title"> {{oneCard.snippet.title}}</h5>
+  <button class="card__btn" type="button" (click)="showDetailCard(oneCard.id)">more...</button>
+</div>

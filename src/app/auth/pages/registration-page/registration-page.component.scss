@@ -1,0 +1,23 @@
+.form-wrapper {
+  width: 344px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  padding: 30px 20px 26px;
+
+}
+.form-wrapper__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-bottom: 22px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  min-height: calc(100vh - 142px);
+}

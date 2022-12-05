@@ -1,0 +1,15 @@
+.card__info-count {
+  font-size: 10px;
+  line-height: 12px;
+  color: #000000;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.info-count__item {
+  display: flex;
+  gap: 3px;
+  margin: 0;
+}

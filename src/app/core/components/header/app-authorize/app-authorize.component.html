@@ -1,0 +1,8 @@
+<div class="header__login-container">
+  <div *ngIf="authService.getIsLogin(); else openFormAuth" class="header__login">
+     <button type="button" (click)="loginOut()" class="header__login-open">LOG_OUT</button>
+  </div>
+  <ng-template #openFormAuth>
+    <button type="button" [disabled]="!authService.getIsLogin()" class="header__login-open" #btnFormAuth>LOG_IN</button>
+  </ng-template>
+</div>

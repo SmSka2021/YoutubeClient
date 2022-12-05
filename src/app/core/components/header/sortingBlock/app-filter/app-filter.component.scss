@@ -1,0 +1,30 @@
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter__input {
+  background-color: #fff;
+  width: 150px;
+  border: none;
+  padding: 0 10px;
+}
+
+.filter__btn {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #2F80ED;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration-line: underline;
+  }
+
+  &:checked {
+    text-decoration-line: underline;
+  }
+}

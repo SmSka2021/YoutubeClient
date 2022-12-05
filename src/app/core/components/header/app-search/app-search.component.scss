@@ -1,0 +1,13 @@
+.header__search-input {
+  height: 24px;
+  width: 396px;
+  background: #EFEFEF;
+  border: none;
+  padding: 0 15px;
+}
+
+@media (max-width: 1000px) {
+  .header__search-input {
+    width: 200px;
+  }
+}

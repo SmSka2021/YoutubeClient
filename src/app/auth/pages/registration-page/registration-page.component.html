@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class="form-wrapper" *ngIf="!authService.getIsLogin()">
+  <h3 class="form-wrapper__title">{{authService.getRegistration() ? "Registration" : "Login"}}</h3>
+  <app-registration-form *ngIf="authService.getRegistration() && !authService.getIsLogin()"></app-registration-form>
+  <app-sign-in-form  *ngIf="!authService.getRegistration() && !authService.getIsLogin()"></app-sign-in-form>
+</div>
+</div>
+
+
+
